@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 60 20% 98%;
+    --foreground: 150 30% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 30% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 30% 12%;
+
+    --primary: 145 45% 22%;
+    --primary-foreground: 60 20% 98%;
+
+    --secondary: 36 100% 55%;
+    --secondary-foreground: 150 30% 12%;
+
+    --muted: 90 15% 93%;
+    --muted-foreground: 150 10% 45%;
+
+    --accent: 45 100% 58%;
+    --accent-foreground: 150 30% 12%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 90 15% 88%;
+    --input: 90 15% 88%;
+    --ring: 145 45% 22%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Custom brand tokens */
+    --brand-green: 145 45% 22%;
+    --brand-green-light: 145 40% 35%;
+    --brand-orange: 30 95% 55%;
+    --brand-gold: 45 100% 58%;
+    --brand-cream: 45 40% 95%;
+    --brand-dark: 150 30% 8%;
+
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
+  }
+
+  .dark {
+    --background: 150 30% 5%;
+    --foreground: 60 20% 95%;
+    --card: 150 30% 8%;
+    --card-foreground: 60 20% 95%;
+    --popover: 150 30% 8%;
+    --popover-foreground: 60 20% 95%;
+    --primary: 145 45% 40%;
+    --primary-foreground: 150 30% 5%;
+    --secondary: 36 80% 50%;
+    --secondary-foreground: 60 20% 95%;
+    --muted: 150 20% 15%;
+    --muted-foreground: 150 10% 60%;
+    --accent: 45 90% 50%;
+    --accent-foreground: 150 30% 5%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 150 20% 18%;
+    --input: 150 20% 18%;
+    --ring: 145 45% 40%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--brand-green)), hsl(var(--brand-green-light)));
+  }
+
+  .bg-brand-gradient {
+    background: linear-gradient(135deg, hsl(var(--brand-green)), hsl(var(--brand-green-light)));
+  }
+
+  .bg-hero-overlay {
+    background: linear-gradient(to bottom, hsl(var(--brand-dark) / 0.6), hsl(var(--brand-dark) / 0.4));
+  }
+
+  .section-padding {
+    @apply px-4 py-20 md:px-8 lg:px-16 xl:px-24;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
